@@ -37,7 +37,7 @@ export const allElementsInListHaveTypeString = (list: any[]): boolean => {
 export const getPrometheusMetricFromBaseChain = (baseChain: string): string => {
     switch (baseChain.toLowerCase()) {
         case 'cosmos':
-            return 'tendermint_consensus_height'
+            return 'cometbft_consensus_height'
         case 'chainlink':
             return 'max_unconfirmed_blocks'
         default:

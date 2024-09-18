@@ -938,8 +938,8 @@ class CosmosNodeMonitor(CosmosMonitor):
         # were set to be optional, so first we need to check if the value is
         # None.
         one_value_subset_metrics = [
-            'tendermint_consensus_latest_block_height',
-            'tendermint_consensus_validator_power',
+            'cometbft_consensus_latest_block_height',
+            'cometbft_consensus_validator_power',
         ]
         for metric in one_value_subset_metrics:
             value = None
@@ -955,12 +955,12 @@ class CosmosNodeMonitor(CosmosMonitor):
         # set. This means that we can set the metric to 0 as the node has no
         # voting power.
         voting_power = processed_data['result']['data'][
-            'tendermint_consensus_validator_power']
+            'cometbft_consensus_validator_power']
         if voting_power is None:
             self.logger.debug("%s %s converted to %s", self.node_config,
-                              'tendermint_consensus_validator_power', 0)
+                              'cometbft_consensus_validator_power', 0)
             processed_data['result']['data'][
-                'tendermint_consensus_validator_power'] = 0
+                'cometbft_consensus_validator_power'] = 0
 
         return processed_data
 

@@ -28,8 +28,8 @@ RAW_TO_TRANSFORMED_CHAINLINK_METRICS = {
     'run_status_update_total_errors': 'total_errored_job_runs',
 }
 RAW_TO_TRANSFORMED_COSMOS_NODE_PROM_METRICS = {
-    'tendermint_consensus_latest_block_height': 'current_height',
-    'tendermint_consensus_validator_power': 'voting_power',
+    'cometbft_consensus_latest_block_height': 'current_height',
+    'cometbft_consensus_validator_power': 'voting_power',
 }
 INT_CHAINLINK_METRICS = ['current_height',
                          'total_block_headers_received',

@@ -1231,7 +1231,7 @@ app.post('/server/cosmos/rest',
             return;
         }
 
-        const url = `${cosmosRestUrl}/node_info`;
+        const url = `${cosmosRestUrl}/cosmos/base/tendermint/v1beta1/node_info`;
 
         axios.get(url, {timeout: 3000}).then((response) => {
             if ('node_info' in response.data) {
